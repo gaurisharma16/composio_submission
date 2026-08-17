@@ -429,32 +429,37 @@
             color: var(--muted);
         }
 
-        /* Verification table */
         .verify-table {
             width: 100%;
-            border-collapse: collapse;
+            border-collapse: separate;
+            border-spacing: 0;
             font-size: 13px;
         }
 
         .verify-table th {
             text-align: left;
-            padding: 10px 14px;
+            padding: 14px 16px;
             font-size: 11px;
             font-weight: 600;
-            letter-spacing: 0.06em;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
             color: var(--muted);
-            border-bottom: 1px solid var(--border);
+            border-bottom: 2px solid var(--border);
         }
 
         .verify-table td {
-            padding: 10px 14px;
+            padding: 16px 16px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.04);
             vertical-align: top;
+            background: rgba(255, 255, 255, 0.01);
         }
 
         .verify-table tr:last-child td {
             border-bottom: none;
+        }
+
+        .verify-table tr:hover td {
+            background: rgba(255, 255, 255, 0.025);
         }
 
         .badge {
@@ -994,11 +999,11 @@
                         </tr>
                         <tr>
                             <td>31</td>
-                            <td>Google Ads</td>
+                            <td class="app-name">Google Ads</td>
                             <td>Access Type</td>
-                            <td>Gated — developer token required</td>
-                            <td>✓ Confirmed — ads.google.com/nav/login?authuser=0</td>
-                            <td><span class="badge badge-correct">✓ Correct</span></td>
+                            <td>Self-serve via OAuth2</td>
+                            <td style="color:var(--rose)">❌ Gated — requires manual developer token approval</td>
+                            <td><span class="badge badge-wrong">✗ Incorrect</span></td>
                         </tr>
                         <tr>
                             <td>41</td>
@@ -1120,41 +1125,41 @@
     </footer>
 
     <script>
-let allData = [];
+        let allData = [];
 
-async function loadData() {
-    try {
-        const r = await fetch('agent_results.json');
-        allData = await r.json();
-        renderTable(allData);
-        renderHitlTags();
-    } catch (e) {
-        document.getElementById('dataBody').innerHTML = '<div style="padding:40px;text-align:center;color:var(--muted)">Error loading data. Ensure agent_results.json is in the same directory.</div>';
-    }
-}
-
-function renderHitlTags() {
-    const hitlApps = allData.filter(a => a.hitl_needed);
-
-    const groups = {
-        "Enterprise/Partner Gated": [],
-        "No Public API / Waitlist": [],
-        "Agent Verification Error": []
-    };
-
-    hitlApps.forEach(a => {
-        const note = (a.agent_note || "").toLowerCase();
-        if (note.includes("no public") || note.includes("waitlist") || a.category.includes("10.")) {
-            groups["No Public API / Waitlist"].push(a.app_name);
-        } else if (note.includes("gated") || note.includes("partner") || note.includes("sales") || a.category.includes("9.")) {
-            groups["Enterprise/Partner Gated"].push(a.app_name);
-        } else {
-            groups["Agent Verification Error"].push(a.app_name);
+        async function loadData() {
+            try {
+                const r = await fetch('agent_results.json');
+                allData = await r.json();
+                renderTable(allData);
+                renderHitlTags();
+            } catch (e) {
+                document.getElementById('dataBody').innerHTML = '<div style="padding:40px;text-align:center;color:var(--muted)">Error loading data. Ensure agent_results.json is in the same directory.</div>';
+            }
         }
-    });
 
-    const container = document.getElementById('hitl-reasons-container');
-    container.innerHTML = `
+        function renderHitlTags() {
+            const hitlApps = allData.filter(a => a.hitl_needed);
+
+            const groups = {
+                "Enterprise/Partner Gated": [],
+                "No Public API / Waitlist": [],
+                "Agent Verification Error": []
+            };
+
+            hitlApps.forEach(a => {
+                const note = (a.agent_note || "").toLowerCase();
+                if (note.includes("no public") || note.includes("waitlist") || a.category.includes("10.")) {
+                    groups["No Public API / Waitlist"].push(a.app_name);
+                } else if (note.includes("gated") || note.includes("partner") || note.includes("sales") || a.category.includes("9.")) {
+                    groups["Enterprise/Partner Gated"].push(a.app_name);
+                } else {
+                    groups["Agent Verification Error"].push(a.app_name);
+                }
+            });
+
+            const container = document.getElementById('hitl-reasons-container');
+            container.innerHTML = `
         <div class="hitl-reason-card" style="grid-column: 1 / -1; border-color: rgba(251,191,36,0.3); background: rgba(251,191,36,0.02)">
             <div class="reason-header">
                 <div class="reason-icon" style="background: rgba(251,191,36,0.1); color: var(--amber);">⚠</div>
@@ -1179,50 +1184,48 @@ function renderHitlTags() {
             <div>${groups["No Public API / Waitlist"].map(n => `<span class="hitl-app-tag tag-violet">${n}</span>`).join('')}</div>
         </div>
     `;
-}
+        }
 
-function accessClass(a) {
-    if (a.hitl_needed) return 'gated';
-    const t = (a.access_type || '').toLowerCase();
-    if (t.includes('self')) return 'self-serve';
-    if (t.includes('gated') || t.includes('enterprise') || t.includes('partner')) return 'gated';
-    return 'mixed';
-}
+        function accessClass(a) {
+            if (a.hitl_needed) return 'gated';
+            const t = (a.access_type || '').toLowerCase();
+            if (t.includes('self')) return 'self-serve';
+            if (t.includes('gated') || t.includes('enterprise') || t.includes('partner')) return 'gated';
+            return 'mixed';
+        }
 
-function accessLabel(a) {
-    if (a.hitl_needed) return 'Gated / HITL';
-    const t = (a.access_type || '');
-    if (t.toLowerCase().includes('self')) return 'Self-serve';
-    return t.split('(')[0].trim().split('—')[0].trim().replace(/[^a-zA-Z0-9 -]/g, '') || 'Gated';
-}
+        function accessLabel(a) {
+            if (a.hitl_needed) return 'Gated / HITL';
+            const t = (a.access_type || '');
+            if (t.toLowerCase().includes('self')) return 'Self-serve';
+            return t.split('(')[0].trim().split('—')[0].trim().replace(/[^a-zA-Z0-9 -]/g, '') || 'Gated';
+        }
 
-function renderTable(data) {
-    const tbody = document.getElementById('dataBody');
-    const rc = document.getElementById('rowCount');
-    if (rc) {
-        rc.textContent = `Showing ${data.length} of ${allData.length} apps`;
-    }
-    
-    if (!data.length) {
-        tbody.innerHTML = '<div style="padding:40px;text-align:center;color:var(--muted)">No apps match your filters.</div>';
-        return;
-    }
-    
-    tbody.innerHTML = data.map(a => {
-        const ac = accessClass(a);
-        const al = accessLabel(a);
-        const mcpBadge = (a.mcp_available && a.mcp_available !== 'No')
-            ? `<div class="mcp-yes" style="margin-top:4px;display:flex;align-items:center;gap:4px;width:fit-content">${a.mcp_available.startsWith('Yes') ? '⚡ ' : ''}MCP</div>` : '';
-        const hitlBadge = a.hitl_needed ? '<span class="hitl-flag">HITL</span>' : '';
-        
-        const whRaw = (a.webhooks || '').toLowerCase();
-        const whHas = whRaw.includes('yes') || whRaw.includes('support') || whRaw.includes('comprehens');
-        const whText = whRaw.includes('no') && !whRaw.includes('yes') ? 'No webhooks' : a.webhooks.split(/[—–-]/)[0];
-        const whClass = whHas ? 'wh-yes' : 'wh-no';
+        function renderTable(data) {
+            const tbody = document.getElementById('dataBody');
+            const rc = document.getElementById('rowCount');
+            if (rc) {
+                rc.textContent = `Showing ${data.length} of ${allData.length} apps`;
+            }
 
-        let verdict = (a.buildability_verdict || '—').replace(/[^a-zA-Z0-9 .,!?()'-]/g, '');
+            if (!data.length) {
+                tbody.innerHTML = '<div style="padding:40px;text-align:center;color:var(--muted)">No apps match your filters.</div>';
+                return;
+            }
 
-        return `
+            tbody.innerHTML = data.map(a => {
+                const ac = accessClass(a);
+                const al = accessLabel(a);
+                const mcpBadge = (a.mcp_available && a.mcp_available !== 'No')
+                    ? `<div class="mcp-yes" style="margin-top:4px;display:flex;align-items:center;gap:4px;width:fit-content">${a.mcp_available.startsWith('Yes') ? '⚡ ' : ''}MCP</div>` : '';
+                const hitlBadge = a.hitl_needed ? '<span class="hitl-flag">HITL</span>' : '';
+
+                const whRaw = (a.webhooks || '').toLowerCase();
+                const whHas = whRaw.includes('yes') || whRaw.includes('support') || whRaw.includes('comprehens');
+                const whText = whRaw.includes('no') && !whRaw.includes('yes') ? 'No webhooks' : a.webhooks.split(/[—–-]/)[0];
+                const whClass = whHas ? 'wh-yes' : 'wh-no';
+
+                return `
         <div class="matrix-row" data-cat="${a.category}" data-hitl="${a.hitl_needed}" data-access="${ac}">
             <div class="cell-num">${a.id}</div>
             <div>
@@ -1240,33 +1243,34 @@ function renderTable(data) {
             </div>
             <div class="${whClass}" title="${a.webhooks}">${whText}</div>
             <div>
-                <div class="cell-verdict" title="${a.buildability_verdict}">${verdict}</div>
+                <div class="cell-verdict" title="${a.buildability_verdict}">${a.buildability_verdict}</div>
                 <a class="ev-link" href="${a.evidence_url || '#'}" target="_blank" style="margin-top:4px;">View Docs ↗</a>
             </div>
         </div>
         `;
-    }).join('');
-}
+            }).join('');
+        }
 
-function filterTable() {
-    const q = document.getElementById('searchInput').value.toLowerCase();
-    const cat = document.getElementById('categoryFilter').value;
-    const acc = document.getElementById('accessFilter').value;
-    
-    const filtered = allData.filter(a => {
-        const matchQ = !q || a.app_name.toLowerCase().includes(q) || (a.description||'').toLowerCase().includes(q);
-        const matchCat = !cat || a.category === cat;
-        const matchAcc = !acc
-            || (acc === 'self' && accessClass(a) === 'self-serve')
-            || (acc === 'gated' && accessClass(a) === 'gated')
-            || (acc === 'hitl' && a.hitl_needed);
-        return matchQ && matchCat && matchAcc;
-    });
-    
-    renderTable(filtered);
-}
+        function filterTable() {
+            const q = document.getElementById('searchInput').value.toLowerCase();
+            const cat = document.getElementById('categoryFilter').value;
+            const acc = document.getElementById('accessFilter').value;
 
-document.addEventListener('DOMContentLoaded', loadData);
-</script>
+            const filtered = allData.filter(a => {
+                const matchQ = !q || a.app_name.toLowerCase().includes(q) || (a.description || '').toLowerCase().includes(q);
+                const matchCat = !cat || a.category === cat;
+                const matchAcc = !acc
+                    || (acc === 'self' && accessClass(a) === 'self-serve')
+                    || (acc === 'gated' && accessClass(a) === 'gated')
+                    || (acc === 'hitl' && a.hitl_needed);
+                return matchQ && matchCat && matchAcc;
+            });
+
+            renderTable(filtered);
+        }
+
+        document.addEventListener('DOMContentLoaded', loadData);
+    </script>
 </body>
+
 </html>
