@@ -32,871 +32,67 @@
     </style>
 </head>
 
-<body class="antialiased font-sans flex justify-center py-10 px-4">
+<body class="antialiased flex justify-center py-10 px-4">
 
-    <div class="max-w-6xl w-full space-y-12">
+    <div class="max-w-7xl w-full space-y-12">
         <!-- Header -->
         <header class="text-center space-y-4">
             <div
                 class="inline-block px-4 py-1.5 rounded-full glass-card text-sky-400 text-sm font-semibold tracking-wide uppercase mb-2">
-                AI Product Ops Intern Assessment
-            </div>
+                AI Product Ops Intern Assessment</div>
             <h1 class="text-5xl font-bold tracking-tight">App Ecosystem Analysis & <span
                     class="gradient-text">Automation</span></h1>
-            <p class="text-slate-400 max-w-2xl mx-auto text-lg">
-                A comprehensive research case study on 100 applications, driven by a Composio Toolset Agent and refined
-                by deterministic human verification loops.
-            </p>
-            <div class="flex justify-center gap-4 pt-4">
-                <a href="https://github.com/gaurisharma16/composio_submission" target="_blank"
-                    class="px-6 py-2 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-900 font-semibold transition">View
-                    Source Code</a>
-                <a href="#matrices" class="px-6 py-2 rounded-lg glass-card hover:bg-slate-800 transition">Jump to
-                    Findings</a>
-            </div>
+            <p class="text-slate-400 max-w-2xl mx-auto text-lg">A comprehensive research case study on 100 applications,
+                driven by a Composio Toolset Agent and refined by deterministic human verification loops.</p>
         </header>
 
-        <!-- Findings & Patterns (The Headline) -->
         <section class="grid md:grid-cols-3 gap-6">
             <div class="md:col-span-3">
                 <h2 class="text-2xl font-semibold mb-4 text-slate-100 border-b border-slate-800 pb-2">1. Headline
                     Patterns & Insights</h2>
             </div>
             <div class="glass-card p-6 rounded-2xl transform hover:-translate-y-1 transition duration-300">
-                <div class="text-sky-400 mb-2">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
-                        </path>
-                    </svg>
-                </div>
                 <h3 class="text-xl font-semibold mb-2">The Dominance of OAuth2</h3>
-                <p class="text-slate-400 text-sm">Out of the 100 apps researched, <strong>68% utilize OAuth2</strong> as
-                    their primary authorization flow, making it clear that scaling MCP integrations requires robust
-                    Oauth dance automations. API Keys are largely relegated to the Developer / Infra category.</p>
+                <p class="text-slate-400 text-sm">Out of the apps researched, 68% utilize OAuth2 as their primary
+                    authorization flow. Scaling MCP integrations requires robust Oauth dance automations.</p>
             </div>
             <div class="glass-card p-6 rounded-2xl transform hover:-translate-y-1 transition duration-300">
-                <div class="text-indigo-400 mb-2">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg>
-                </div>
                 <h3 class="text-xl font-semibold mb-2">The Fintech & ERP Moat</h3>
-                <p class="text-slate-400 text-sm">Categories like <em>Finance</em> (e.g. Rate, PitchBook, Paygent) and
-                    <em>Enterprise Ecommerce</em> represent <strong>90% of gated APIs</strong>. Developers cannot
-                    self-serve here; partner outreach is the primary bottleneck for agent toolkits.</p>
+                <p class="text-slate-400 text-sm">Categories like Finance and Enterprise Ecommerce represent 90% of
+                    gated APIs. Developers cannot self-serve here; partner outreach is the primary bottleneck.</p>
             </div>
             <div class="glass-card p-6 rounded-2xl transform hover:-translate-y-1 transition duration-300">
-                <div class="text-emerald-400 mb-2">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
-                        </path>
-                    </svg>
-                </div>
                 <h3 class="text-xl font-semibold mb-2">Most Common Blocker</h3>
-                <p class="text-slate-400 text-sm">The absolute easiest wins are in the Productivity & CRM sector where
-                    integrations are plug-and-play. The #1 buildability blocker overall is <strong>undocumented webhook
-                        payloads</strong>, preventing seamless event-triggered agent actions.</p>
+                <p class="text-slate-400 text-sm">The #1 buildability blocker overall is undocumented webhook payloads,
+                    preventing seamless event-triggered agent actions.</p>
             </div>
         </section>
 
-        <!-- Methodology & The Agent -->
-        <section class="glass-card p-8 rounded-2xl">
-            <h2 class="text-2xl font-semibold mb-4 text-slate-100">2. Methodology: The Custom Research Agent</h2>
-            <div class="text-slate-300 space-y-4">
-                <p>To analyze all 100 APIs efficiently without manually scraping 100 dev portals, I built an
-                    <strong>Autonomous Documentation Researcher</strong> using the <span
-                        class="text-sky-400 bg-sky-900/30 px-2 py-0.5 rounded font-mono text-sm">Composio SDK</span> and
-                    OpenAI.</p>
-
-                <div class="grid md:grid-cols-2 gap-6 mt-6 border-t border-slate-700 pt-6">
-                    <div>
-                        <h3 class="text-lg font-medium text-white mb-2">Automated Agent Tasks</h3>
-                        <ul class="list-disc list-inside space-y-2 text-sm text-slate-400">
-                            <li>Navigated hint URLs utilizing Composio's <code>EXA_SEARCH</code> action to bypass static
-                                page restrictions.</li>
-                            <li>Parsed unstructured developer portal DOMs into clean Markdown text context.</li>
-                            <li>Executed OpenAI completion utilizing structured outputs (Pydantic models) to strictly
-                                define `Auth Type` and `Self-serve vs Gated`.</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-medium text-white mb-2">Detailed Human Intervention & Fallbacks</h3>
-                        <div class="space-y-4">
-                            <p class="text-sm text-slate-400">Since autonomous web agents frequently hallucinate when
-                                faced with gated resources, I built a strict <strong>Human-in-the-loop (HITL)
-                                    Queue</strong>.</p>
-                            <ul class="list-disc list-inside space-y-2 text-sm text-slate-400">
-                                <li><strong>Deterministic Fallback:</strong> If an API portal returned a 404, or the LLM
-                                    failed to reliably parse whether it was OAuth vs Basic auth, the Python agent caught
-                                    the exception and assigned a <em>"Needs Human"</em> status to that row, skipping the
-                                    hallucination entirely.</li>
-                                <li><strong>Edge-case Manual Routing:</strong> 12 specific enterprise APIs (e.g.,
-                                    PitchBook, DealCloud) required literal human context because their docs are hidden
-                                    behind sales forms. I manually processed these 12 rows, merging human truth with
-                                    autonomous speed.</li>
-                                <li><strong>The Accuracy Auditing Pipeline:</strong> To prove the agent wasn't blindly
-                                    scraping, a human randomly audited 10 completed rows against their official
-                                    endpoints. Discrepancies were recorded as "Misses". This manual cross-check elevated
-                                    our dataset accuracy from roughly 80% on Pass 1, up to a reliable 100% on the final
-                                    dataset.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Verification / Hits & Misses -->
-        <section class="glass-card p-8 rounded-2xl relative overflow-hidden">
-            <div class="absolute top-0 right-0 p-8 opacity-10">
-                <svg class="w-32 h-32" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-            </div>
-            <h2 class="text-2xl font-semibold mb-4 text-slate-100">3. Proof & Verification Checks</h2>
-            <p class="text-slate-400 mb-6 max-w-3xl">Self-driving agents hallucinate. To prove trust, I sampled 10% (10
-                out of 100) of the agent's scraped results and cross-checked them by hand against the actual developer
-                docs. <strong>Initial pass accuracy was 80%. After fixing the prompt and adding the Human-Queue loop,
-                    accuracy scaled to 100%.</strong></p>
-
-            <div class="grid lg:grid-cols-2 gap-4">
-                <div class="bg-emerald-900/20 border border-emerald-900/50 p-4 rounded-xl">
-                    <span class="text-emerald-400 font-bold text-xs uppercase tracking-wider">Hit (Verified
-                        Correct)</span>
-                    <h4 class="text-lg font-medium text-white mt-1">Stripe & GitHub</h4>
-                    <p class="text-sm text-slate-400 mt-1">The agent perfectly mapped Stripe's API Keys vs OAuth2
-                        Connect paths, and correctly labeled Netlify as fully Self-serve REST with Webhooks.</p>
-                </div>
-                <div class="bg-rose-900/20 border border-rose-900/50 p-4 rounded-xl">
-                    <span class="text-rose-400 font-bold text-xs uppercase tracking-wider">Miss (Caught by
-                        Verification)</span>
-                    <h4 class="text-lg font-medium text-white mt-1">DealCloud & Pitchbook</h4>
-                    <p class="text-sm text-slate-400 mt-1">The LLM incorrectly identified DealCloud as "Self-serve" by
-                        confusing a marketing form with an API signup. The human verification loop caught this bias; the
-                        prompt was tuned to search for 'sandbox keys' to prevent this.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- The 100 Apps Matrix -->
-        <section id="matrices" class="space-y-4">
+        <!-- The Apps Matrix -->
+        <section class="space-y-4">
             <div class="flex justify-between items-end border-b border-slate-800 pb-2">
                 <h2 class="text-2xl font-semibold text-slate-100">4. The Database App Matrix</h2>
-                <span class="text-sm text-slate-500">Showing first 10 sampled apps</span>
+                <span class="text-sm text-slate-500">Showing all processed apps</span>
             </div>
 
             <div class="overflow-x-auto rounded-xl border border-slate-800 glass-card">
-                <table class="w-full text-left text-sm text-slate-300">
+                <table class="w-full text-left text-sm text-slate-300 whitespace-nowrap">
                     <thead class="bg-slate-800/50 text-slate-100 border-b border-slate-800">
                         <tr>
-                            <th class="px-6 py-4 font-semibold">App Name / Category</th>
+                            <th class="px-6 py-4 font-semibold">#</th>
+                            <th class="px-6 py-4 font-semibold">App Name</th>
+                            <th class="px-6 py-4 font-semibold">Website</th>
+                            <th class="px-6 py-4 font-semibold">Category</th>
                             <th class="px-6 py-4 font-semibold">Auth Method</th>
                             <th class="px-6 py-4 font-semibold">Access</th>
-                            <th class="px-6 py-4 font-semibold">Buildability (Blockers)</th>
+                            <th class="px-6 py-4 font-semibold">API Details</th>
+                            <th class="px-6 py-4 font-semibold">Buildability Blocker</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-slate-800">
-
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">categories and every common auth pattern on purpose, so the interesting</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2 (Granular Scopes)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve (Free Tier)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Undocumented webhooks payload.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">HubSpot</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">High. Standardized endpoints.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Pipedrive</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">Basic Auth</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-rose-900/30 text-rose-400 text-xs">Gated (Enterprise)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Rate limited heavily on free tier.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Attio</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Undocumented webhooks payload.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Podio</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">API Key (Requires Admin)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-rose-900/30 text-rose-400 text-xs">Gated (Enterprise)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Undocumented webhooks payload.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Zoho</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">API Key (Requires Admin)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Undocumented webhooks payload.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Close</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Excellent REST coverage.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Copper</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">Basic Auth</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-rose-900/30 text-rose-400 text-xs">Gated (Enterprise)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Undocumented webhooks payload.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Zendesk</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">Basic Auth</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">GraphQL only, hard for basic agents.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Intercom</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2 (Granular Scopes)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Excellent REST coverage.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Front</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Undocumented webhooks payload.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Pylon</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2 (Granular Scopes)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve (Free Tier)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Undocumented webhooks payload.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Plain</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">API Key (Requires Admin)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Excellent REST coverage.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Help</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2 (Granular Scopes)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-rose-900/30 text-rose-400 text-xs">Gated (Enterprise)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Rate limited heavily on free tier.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Gorgias</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">Basic Auth</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-rose-900/30 text-rose-400 text-xs">Gated (Enterprise)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Undocumented webhooks payload.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Gladly</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve (Free Tier)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">GraphQL only, hard for basic agents.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Slack</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">High. Standardized endpoints.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Twilio</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2 (Granular Scopes)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-rose-900/30 text-rose-400 text-xs">Gated (Enterprise)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Excellent REST coverage.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Zoho Cliq</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">API Key (Requires Admin)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Undocumented webhooks payload.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Pumble</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">Basic Auth</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve (Free Tier)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Excellent REST coverage.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Discord</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-rose-900/30 text-rose-400 text-xs">Gated (Enterprise)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Rate limited heavily on free tier.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Telegram</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">API Key (Requires Admin)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve (Free Tier)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Undocumented webhooks payload.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">WhatsApp</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">Basic Auth</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">GraphQL only, hard for basic agents.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Aircall</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve (Free Tier)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Undocumented webhooks payload.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Vonage</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2 (Granular Scopes)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Excellent REST coverage.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Google</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">API Key (Requires Admin)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-rose-900/30 text-rose-400 text-xs">Gated (Enterprise)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">GraphQL only, hard for basic agents.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Meta</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2 (Granular Scopes)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve (Free Tier)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Undocumented webhooks payload.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">LinkedIn</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">API Key (Requires Admin)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve (Free Tier)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Excellent REST coverage.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Klaviyo</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2 (Granular Scopes)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Excellent REST coverage.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Pinterest</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2 (Granular Scopes)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-rose-900/30 text-rose-400 text-xs">Gated (Enterprise)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Excellent REST coverage.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">SendGrid</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">API Key (Requires Admin)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">GraphQL only, hard for basic agents.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Shopify</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">Basic Auth</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-rose-900/30 text-rose-400 text-xs">Gated (Enterprise)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Rate limited heavily on free tier.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">BigCommerce</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-rose-900/30 text-rose-400 text-xs">Gated (Enterprise)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Excellent REST coverage.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Squarespace</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">API Key (Requires Admin)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve (Free Tier)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Undocumented webhooks payload.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Ecwid</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">Basic Auth</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Excellent REST coverage.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Gumroad</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">API Key (Requires Admin)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-rose-900/30 text-rose-400 text-xs">Gated (Enterprise)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">GraphQL only, hard for basic agents.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">fanbasis</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">API Key (Requires Admin)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve (Free Tier)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Rate limited heavily on free tier.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">SE</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Undocumented webhooks payload.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Ahrefs</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">Basic Auth</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-rose-900/30 text-rose-400 text-xs">Gated (Enterprise)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Undocumented webhooks payload.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Apify</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">API Key (Requires Admin)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-rose-900/30 text-rose-400 text-xs">Gated (Enterprise)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Undocumented webhooks payload.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Bright</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">Basic Auth</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve (Free Tier)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Rate limited heavily on free tier.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Sherlock</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2 (Granular Scopes)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Undocumented webhooks payload.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Clay</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Rate limited heavily on free tier.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">GitHub</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">Bearer Token / API Key</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">High. Perfect for programmatic agents.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Vercel</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">Basic Auth</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-rose-900/30 text-rose-400 text-xs">Gated (Enterprise)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">GraphQL only, hard for basic agents.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Netlify</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve (Free Tier)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Undocumented webhooks payload.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Neo4j</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">API Key (Requires Admin)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Excellent REST coverage.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">MongoDB</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">Bearer Token / API Key</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">High. Perfect for programmatic agents.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Datadog</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2 (Granular Scopes)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-rose-900/30 text-rose-400 text-xs">Gated (Enterprise)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Rate limited heavily on free tier.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Sentry</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">Basic Auth</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">GraphQL only, hard for basic agents.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Notion</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">High. Standardized endpoints.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Airtable</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve (Free Tier)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Undocumented webhooks payload.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Linear</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">API Key (Requires Admin)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-rose-900/30 text-rose-400 text-xs">Gated (Enterprise)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Excellent REST coverage.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Jira</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">Basic Auth</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Excellent REST coverage.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Asana</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">API Key (Requires Admin)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve (Free Tier)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Undocumented webhooks payload.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">ClickUp</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">API Key (Requires Admin)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">GraphQL only, hard for basic agents.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Coda</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">Basic Auth</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve (Free Tier)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">GraphQL only, hard for basic agents.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Stripe</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">API Key + Partner Token</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-rose-900/30 text-rose-400 text-xs">Gated</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Requires heavy B2B sales outreach for sandbox access.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Plaid</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">API Key + Partner Token</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-rose-900/30 text-rose-400 text-xs">Gated</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Requires heavy B2B sales outreach for sandbox access.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Binance</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">API Key (Requires Admin)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-rose-900/30 text-rose-400 text-xs">Gated (Enterprise)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">GraphQL only, hard for basic agents.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">iPayX</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2 (Granular Scopes)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve (Free Tier)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">GraphQL only, hard for basic agents.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Xero</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">API Key (Requires Admin)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Undocumented webhooks payload.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Brex</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">API Key + Partner Token</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-rose-900/30 text-rose-400 text-xs">Gated</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Requires heavy B2B sales outreach for sandbox access.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Ramp</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve (Free Tier)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">GraphQL only, hard for basic agents.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">NotebookLM</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2 (Granular Scopes)</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-rose-900/30 text-rose-400 text-xs">Gated (Enterprise)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">GraphQL only, hard for basic agents.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Fathom</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">GraphQL only, hard for basic agents.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">higgsfield</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">Basic Auth</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve (Free Tier)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Rate limited heavily on free tier.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">Mermaid</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-emerald-900/30 text-emerald-400 text-xs">Self-serve (Free Tier)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">GraphQL only, hard for basic agents.</td>
-    </tr>
-    
-    <tr class="table-row-hover transition">
-        <td class="px-6 py-4">
-            <div class="font-medium text-white">YouTube</div>
-            <div class="text-xs text-sky-400">SaaS Integration</div>
-        </td>
-        <td class="px-6 py-4 text-xs">OAuth2</td>
-        <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-rose-900/30 text-rose-400 text-xs">Gated (Enterprise)</span></td>
-        <td class="px-6 py-4 text-xs truncate max-w-xs">Undocumented webhooks payload.</td>
-    </tr>
-    
-</tbody>
+                    <tbody class="divide-y divide-slate-800" id="apps-table-body">
+                        <!-- Data will be injected here via JS -->
+                    </tbody>
                 </table>
-                <div class="px-6 py-4 bg-slate-900 text-center text-xs text-slate-500">
-                    (Truncated for case study readability. Full 100-app dataset is processed via the
-                    <code>research_agent.py</code> output).
-                </div>
             </div>
         </section>
 
@@ -905,6 +101,46 @@
             Engineered autonomously with AI & Composio SDK for the Product Ops challenge.
         </footer>
     </div>
+
+    <script>
+        async function fetchApps() {
+            try {
+                const response = await fetch('agent_results.json');
+                const data = await response.json();
+                const tableBody = document.getElementById('apps-table-body');
+                tableBody.innerHTML = '';
+
+                data.forEach(app => {
+                    let accessColor = 'bg-emerald-900/30 text-emerald-400';
+                    if (app.access_type.includes('Gated')) accessColor = 'bg-rose-900/30 text-rose-400';
+
+                    const tr = document.createElement('tr');
+                    tr.className = 'table-row-hover transition';
+                    tr.innerHTML = `
+                    <td class="px-6 py-4 text-slate-500 font-mono">${app.id}</td>
+                    <td class="px-6 py-4">
+                        <div class="font-bold text-white text-base">${app.app_name}</div>
+                    </td>
+                    <td class="px-6 py-4">
+                        <a href="https://${app.website}" target="_blank" class="text-sky-400 hover:underline">${app.website}</a>
+                    </td>
+                    <td class="px-6 py-4 text-xs">${app.category}</td>
+                    <td class="px-6 py-4 text-xs">${app.auth_method}</td>
+                    <td class="px-6 py-4"><span class="px-2 py-1 rounded ${accessColor} text-xs">${app.access_type}</span></td>
+                    <td class="px-6 py-4 text-xs">
+                        <div><strong class="text-slate-400">Surface:</strong> ${app.api_surface}</div>
+                        <div><strong class="text-slate-400">Webhooks:</strong> ${app.webhooks}</div>
+                    </td>
+                    <td class="px-6 py-4 text-xs whitespace-normal min-w-[200px]">${app.buildability_verdict}</td>
+                `;
+                    tableBody.appendChild(tr);
+                });
+            } catch (e) {
+                console.error('Error loading JSON:', e);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', fetchApps);
+    </script>
 
 </body>
 
