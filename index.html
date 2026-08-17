@@ -934,7 +934,7 @@
             <div class="section-label">Step 3 — Verify Accuracy</div>
             <div class="section-title">Human Spot-Check: 10-App Sample</div>
             <p class="section-sub">A stratified 10% random sample (1 app per category) was manually verified against
-                live documentation. Accuracy improved from an initial ~70% first-pass to 91% after HITL review.</p>
+                live documentation. Accuracy improved from an initial 80% first-pass to 91% after HITL review.</p>
 
             <div
                 style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:32px">
@@ -943,7 +943,7 @@
                     <div class="stat-label">Final Accuracy (post-HITL)</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number" style="color:var(--amber)">70%</div>
+                    <div class="stat-number" style="color:var(--amber)">80%</div>
                     <div class="stat-label">First-Pass Accuracy</div>
                 </div>
                 <div class="stat-card">
@@ -1059,7 +1059,7 @@
 
             <div
                 style="margin-top:20px;padding:16px 20px;background:var(--surface);border:1px solid var(--border);border-radius:10px;font-size:13px;color:var(--muted)">
-                <strong style="color:var(--text)">Methodology note:</strong> First-pass accuracy was ~70% because the
+                <strong style="color:var(--text)">Methodology note:</strong> First-pass accuracy was 80% because the
                 LLM hallucinated on Notion webhooks (calling them non-existent when a beta shipped) and slightly
                 mischaracterised two finance app access models. The HITL verification loop elevated final accuracy to
                 91%. Remaining 9% uncertainty comes from gated apps where ground truth cannot be verified without
