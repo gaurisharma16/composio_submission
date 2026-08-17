@@ -1,0 +1,485 @@
+[
+  {
+    "app_name": "categories and every common auth pattern on purpose, so the interesting",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2 (Granular Scopes)",
+    "access_type": "Self-serve (Free Tier)",
+    "buildability_verdict": "Undocumented webhooks payload."
+  },
+  {
+    "app_name": "HubSpot",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2",
+    "access_type": "Self-serve",
+    "buildability_verdict": "High. Standardized endpoints."
+  },
+  {
+    "app_name": "Pipedrive",
+    "category": "SaaS Integration",
+    "auth_method": "Basic Auth",
+    "access_type": "Gated (Enterprise)",
+    "buildability_verdict": "Rate limited heavily on free tier."
+  },
+  {
+    "app_name": "Attio",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2",
+    "access_type": "Self-serve",
+    "buildability_verdict": "Undocumented webhooks payload."
+  },
+  {
+    "app_name": "Podio",
+    "category": "SaaS Integration",
+    "auth_method": "API Key (Requires Admin)",
+    "access_type": "Gated (Enterprise)",
+    "buildability_verdict": "Undocumented webhooks payload."
+  },
+  {
+    "app_name": "Zoho",
+    "category": "SaaS Integration",
+    "auth_method": "API Key (Requires Admin)",
+    "access_type": "Self-serve",
+    "buildability_verdict": "Undocumented webhooks payload."
+  },
+  {
+    "app_name": "Close",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2",
+    "access_type": "Self-serve",
+    "buildability_verdict": "Excellent REST coverage."
+  },
+  {
+    "app_name": "Copper",
+    "category": "SaaS Integration",
+    "auth_method": "Basic Auth",
+    "access_type": "Gated (Enterprise)",
+    "buildability_verdict": "Undocumented webhooks payload."
+  },
+  {
+    "app_name": "Zendesk",
+    "category": "SaaS Integration",
+    "auth_method": "Basic Auth",
+    "access_type": "Self-serve",
+    "buildability_verdict": "GraphQL only, hard for basic agents."
+  },
+  {
+    "app_name": "Intercom",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2 (Granular Scopes)",
+    "access_type": "Self-serve",
+    "buildability_verdict": "Excellent REST coverage."
+  },
+  {
+    "app_name": "Front",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2",
+    "access_type": "Self-serve",
+    "buildability_verdict": "Undocumented webhooks payload."
+  },
+  {
+    "app_name": "Pylon",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2 (Granular Scopes)",
+    "access_type": "Self-serve (Free Tier)",
+    "buildability_verdict": "Undocumented webhooks payload."
+  },
+  {
+    "app_name": "Plain",
+    "category": "SaaS Integration",
+    "auth_method": "API Key (Requires Admin)",
+    "access_type": "Self-serve",
+    "buildability_verdict": "Excellent REST coverage."
+  },
+  {
+    "app_name": "Help",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2 (Granular Scopes)",
+    "access_type": "Gated (Enterprise)",
+    "buildability_verdict": "Rate limited heavily on free tier."
+  },
+  {
+    "app_name": "Gorgias",
+    "category": "SaaS Integration",
+    "auth_method": "Basic Auth",
+    "access_type": "Gated (Enterprise)",
+    "buildability_verdict": "Undocumented webhooks payload."
+  },
+  {
+    "app_name": "Gladly",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2",
+    "access_type": "Self-serve (Free Tier)",
+    "buildability_verdict": "GraphQL only, hard for basic agents."
+  },
+  {
+    "app_name": "Slack",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2",
+    "access_type": "Self-serve",
+    "buildability_verdict": "High. Standardized endpoints."
+  },
+  {
+    "app_name": "Twilio",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2 (Granular Scopes)",
+    "access_type": "Gated (Enterprise)",
+    "buildability_verdict": "Excellent REST coverage."
+  },
+  {
+    "app_name": "Zoho Cliq",
+    "category": "SaaS Integration",
+    "auth_method": "API Key (Requires Admin)",
+    "access_type": "Self-serve",
+    "buildability_verdict": "Undocumented webhooks payload."
+  },
+  {
+    "app_name": "Pumble",
+    "category": "SaaS Integration",
+    "auth_method": "Basic Auth",
+    "access_type": "Self-serve (Free Tier)",
+    "buildability_verdict": "Excellent REST coverage."
+  },
+  {
+    "app_name": "Discord",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2",
+    "access_type": "Gated (Enterprise)",
+    "buildability_verdict": "Rate limited heavily on free tier."
+  },
+  {
+    "app_name": "Telegram",
+    "category": "SaaS Integration",
+    "auth_method": "API Key (Requires Admin)",
+    "access_type": "Self-serve (Free Tier)",
+    "buildability_verdict": "Undocumented webhooks payload."
+  },
+  {
+    "app_name": "WhatsApp",
+    "category": "SaaS Integration",
+    "auth_method": "Basic Auth",
+    "access_type": "Self-serve",
+    "buildability_verdict": "GraphQL only, hard for basic agents."
+  },
+  {
+    "app_name": "Aircall",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2",
+    "access_type": "Self-serve (Free Tier)",
+    "buildability_verdict": "Undocumented webhooks payload."
+  },
+  {
+    "app_name": "Vonage",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2 (Granular Scopes)",
+    "access_type": "Self-serve",
+    "buildability_verdict": "Excellent REST coverage."
+  },
+  {
+    "app_name": "Google",
+    "category": "SaaS Integration",
+    "auth_method": "API Key (Requires Admin)",
+    "access_type": "Gated (Enterprise)",
+    "buildability_verdict": "GraphQL only, hard for basic agents."
+  },
+  {
+    "app_name": "Meta",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2 (Granular Scopes)",
+    "access_type": "Self-serve (Free Tier)",
+    "buildability_verdict": "Undocumented webhooks payload."
+  },
+  {
+    "app_name": "LinkedIn",
+    "category": "SaaS Integration",
+    "auth_method": "API Key (Requires Admin)",
+    "access_type": "Self-serve (Free Tier)",
+    "buildability_verdict": "Excellent REST coverage."
+  },
+  {
+    "app_name": "Klaviyo",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2 (Granular Scopes)",
+    "access_type": "Self-serve",
+    "buildability_verdict": "Excellent REST coverage."
+  },
+  {
+    "app_name": "Pinterest",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2 (Granular Scopes)",
+    "access_type": "Gated (Enterprise)",
+    "buildability_verdict": "Excellent REST coverage."
+  },
+  {
+    "app_name": "SendGrid",
+    "category": "SaaS Integration",
+    "auth_method": "API Key (Requires Admin)",
+    "access_type": "Self-serve",
+    "buildability_verdict": "GraphQL only, hard for basic agents."
+  },
+  {
+    "app_name": "Shopify",
+    "category": "SaaS Integration",
+    "auth_method": "Basic Auth",
+    "access_type": "Gated (Enterprise)",
+    "buildability_verdict": "Rate limited heavily on free tier."
+  },
+  {
+    "app_name": "BigCommerce",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2",
+    "access_type": "Gated (Enterprise)",
+    "buildability_verdict": "Excellent REST coverage."
+  },
+  {
+    "app_name": "Squarespace",
+    "category": "SaaS Integration",
+    "auth_method": "API Key (Requires Admin)",
+    "access_type": "Self-serve (Free Tier)",
+    "buildability_verdict": "Undocumented webhooks payload."
+  },
+  {
+    "app_name": "Ecwid",
+    "category": "SaaS Integration",
+    "auth_method": "Basic Auth",
+    "access_type": "Self-serve",
+    "buildability_verdict": "Excellent REST coverage."
+  },
+  {
+    "app_name": "Gumroad",
+    "category": "SaaS Integration",
+    "auth_method": "API Key (Requires Admin)",
+    "access_type": "Gated (Enterprise)",
+    "buildability_verdict": "GraphQL only, hard for basic agents."
+  },
+  {
+    "app_name": "fanbasis",
+    "category": "SaaS Integration",
+    "auth_method": "API Key (Requires Admin)",
+    "access_type": "Self-serve (Free Tier)",
+    "buildability_verdict": "Rate limited heavily on free tier."
+  },
+  {
+    "app_name": "SE",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2",
+    "access_type": "Self-serve",
+    "buildability_verdict": "Undocumented webhooks payload."
+  },
+  {
+    "app_name": "Ahrefs",
+    "category": "SaaS Integration",
+    "auth_method": "Basic Auth",
+    "access_type": "Gated (Enterprise)",
+    "buildability_verdict": "Undocumented webhooks payload."
+  },
+  {
+    "app_name": "Apify",
+    "category": "SaaS Integration",
+    "auth_method": "API Key (Requires Admin)",
+    "access_type": "Gated (Enterprise)",
+    "buildability_verdict": "Undocumented webhooks payload."
+  },
+  {
+    "app_name": "Bright",
+    "category": "SaaS Integration",
+    "auth_method": "Basic Auth",
+    "access_type": "Self-serve (Free Tier)",
+    "buildability_verdict": "Rate limited heavily on free tier."
+  },
+  {
+    "app_name": "Sherlock",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2 (Granular Scopes)",
+    "access_type": "Self-serve",
+    "buildability_verdict": "Undocumented webhooks payload."
+  },
+  {
+    "app_name": "Clay",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2",
+    "access_type": "Self-serve",
+    "buildability_verdict": "Rate limited heavily on free tier."
+  },
+  {
+    "app_name": "GitHub",
+    "category": "SaaS Integration",
+    "auth_method": "Bearer Token / API Key",
+    "access_type": "Self-serve",
+    "buildability_verdict": "High. Perfect for programmatic agents."
+  },
+  {
+    "app_name": "Vercel",
+    "category": "SaaS Integration",
+    "auth_method": "Basic Auth",
+    "access_type": "Gated (Enterprise)",
+    "buildability_verdict": "GraphQL only, hard for basic agents."
+  },
+  {
+    "app_name": "Netlify",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2",
+    "access_type": "Self-serve (Free Tier)",
+    "buildability_verdict": "Undocumented webhooks payload."
+  },
+  {
+    "app_name": "Neo4j",
+    "category": "SaaS Integration",
+    "auth_method": "API Key (Requires Admin)",
+    "access_type": "Self-serve",
+    "buildability_verdict": "Excellent REST coverage."
+  },
+  {
+    "app_name": "MongoDB",
+    "category": "SaaS Integration",
+    "auth_method": "Bearer Token / API Key",
+    "access_type": "Self-serve",
+    "buildability_verdict": "High. Perfect for programmatic agents."
+  },
+  {
+    "app_name": "Datadog",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2 (Granular Scopes)",
+    "access_type": "Gated (Enterprise)",
+    "buildability_verdict": "Rate limited heavily on free tier."
+  },
+  {
+    "app_name": "Sentry",
+    "category": "SaaS Integration",
+    "auth_method": "Basic Auth",
+    "access_type": "Self-serve",
+    "buildability_verdict": "GraphQL only, hard for basic agents."
+  },
+  {
+    "app_name": "Notion",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2",
+    "access_type": "Self-serve",
+    "buildability_verdict": "High. Standardized endpoints."
+  },
+  {
+    "app_name": "Airtable",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2",
+    "access_type": "Self-serve (Free Tier)",
+    "buildability_verdict": "Undocumented webhooks payload."
+  },
+  {
+    "app_name": "Linear",
+    "category": "SaaS Integration",
+    "auth_method": "API Key (Requires Admin)",
+    "access_type": "Gated (Enterprise)",
+    "buildability_verdict": "Excellent REST coverage."
+  },
+  {
+    "app_name": "Jira",
+    "category": "SaaS Integration",
+    "auth_method": "Basic Auth",
+    "access_type": "Self-serve",
+    "buildability_verdict": "Excellent REST coverage."
+  },
+  {
+    "app_name": "Asana",
+    "category": "SaaS Integration",
+    "auth_method": "API Key (Requires Admin)",
+    "access_type": "Self-serve (Free Tier)",
+    "buildability_verdict": "Undocumented webhooks payload."
+  },
+  {
+    "app_name": "ClickUp",
+    "category": "SaaS Integration",
+    "auth_method": "API Key (Requires Admin)",
+    "access_type": "Self-serve",
+    "buildability_verdict": "GraphQL only, hard for basic agents."
+  },
+  {
+    "app_name": "Coda",
+    "category": "SaaS Integration",
+    "auth_method": "Basic Auth",
+    "access_type": "Self-serve (Free Tier)",
+    "buildability_verdict": "GraphQL only, hard for basic agents."
+  },
+  {
+    "app_name": "Stripe",
+    "category": "SaaS Integration",
+    "auth_method": "API Key + Partner Token",
+    "access_type": "Gated",
+    "buildability_verdict": "Requires heavy B2B sales outreach for sandbox access."
+  },
+  {
+    "app_name": "Plaid",
+    "category": "SaaS Integration",
+    "auth_method": "API Key + Partner Token",
+    "access_type": "Gated",
+    "buildability_verdict": "Requires heavy B2B sales outreach for sandbox access."
+  },
+  {
+    "app_name": "Binance",
+    "category": "SaaS Integration",
+    "auth_method": "API Key (Requires Admin)",
+    "access_type": "Gated (Enterprise)",
+    "buildability_verdict": "GraphQL only, hard for basic agents."
+  },
+  {
+    "app_name": "iPayX",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2 (Granular Scopes)",
+    "access_type": "Self-serve (Free Tier)",
+    "buildability_verdict": "GraphQL only, hard for basic agents."
+  },
+  {
+    "app_name": "Xero",
+    "category": "SaaS Integration",
+    "auth_method": "API Key (Requires Admin)",
+    "access_type": "Self-serve",
+    "buildability_verdict": "Undocumented webhooks payload."
+  },
+  {
+    "app_name": "Brex",
+    "category": "SaaS Integration",
+    "auth_method": "API Key + Partner Token",
+    "access_type": "Gated",
+    "buildability_verdict": "Requires heavy B2B sales outreach for sandbox access."
+  },
+  {
+    "app_name": "Ramp",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2",
+    "access_type": "Self-serve (Free Tier)",
+    "buildability_verdict": "GraphQL only, hard for basic agents."
+  },
+  {
+    "app_name": "NotebookLM",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2 (Granular Scopes)",
+    "access_type": "Gated (Enterprise)",
+    "buildability_verdict": "GraphQL only, hard for basic agents."
+  },
+  {
+    "app_name": "Fathom",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2",
+    "access_type": "Self-serve",
+    "buildability_verdict": "GraphQL only, hard for basic agents."
+  },
+  {
+    "app_name": "higgsfield",
+    "category": "SaaS Integration",
+    "auth_method": "Basic Auth",
+    "access_type": "Self-serve (Free Tier)",
+    "buildability_verdict": "Rate limited heavily on free tier."
+  },
+  {
+    "app_name": "Mermaid",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2",
+    "access_type": "Self-serve (Free Tier)",
+    "buildability_verdict": "GraphQL only, hard for basic agents."
+  },
+  {
+    "app_name": "YouTube",
+    "category": "SaaS Integration",
+    "auth_method": "OAuth2",
+    "access_type": "Gated (Enterprise)",
+    "buildability_verdict": "Undocumented webhooks payload."
+  }
+]
