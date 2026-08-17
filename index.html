@@ -1201,6 +1201,11 @@
             return t.split('(')[0].trim().split('—')[0].trim().replace(/[^a-zA-Z0-9 -]/g, '') || 'Gated';
         }
 
+        function clean(str) {
+            if (!str) return '';
+            return String(str).replace(/â€[”"”]?(?:\s*\-)?/g, '-').replace(/â€”/g, '-').replace(/â€/g, '-');
+        }
+
         function renderTable(data) {
             const tbody = document.getElementById('dataBody');
             const rc = document.getElementById('rowCount');
@@ -1220,34 +1225,44 @@
                     ? `<div class="mcp-yes" style="margin-top:4px;display:flex;align-items:center;gap:4px;width:fit-content">${a.mcp_available.startsWith('Yes') ? '⚡ ' : ''}MCP</div>` : '';
                 const hitlBadge = a.hitl_needed ? '<span class="hitl-flag">HITL</span>' : '';
 
-                const whRaw = (a.webhooks || '').toLowerCase();
+                let safeAuth = clean(a.auth_method || '—');
+                let safeAccess = clean(a.self_serve_detail || '');
+                let safeVerdict = clean(a.buildability_verdict || '—');
+                let safeApi = clean((a.api_surface || '—')).split(/[—–-]/)[0];
+
+                let whText = clean(a.webhooks || '');
+                const whRaw = whText.toLowerCase();
                 const whHas = whRaw.includes('yes') || whRaw.includes('support') || whRaw.includes('comprehens');
-                const whText = whRaw.includes('no') && !whRaw.includes('yes') ? 'No webhooks' : a.webhooks.split(/[—–-]/)[0];
+                if (whRaw.includes('no') && !whRaw.includes('yes')) {
+                    whText = 'No webhooks';
+                } else {
+                    whText = whText.split(/[—–-]/)[0];
+                }
                 const whClass = whHas ? 'wh-yes' : 'wh-no';
 
                 return `
-        <div class="matrix-row" data-cat="${a.category}" data-hitl="${a.hitl_needed}" data-access="${ac}">
-            <div class="cell-num">${a.id}</div>
-            <div>
-                <div class="cell-app-name" title="${a.app_name}">${a.app_name}${hitlBadge}</div>
-                <a class="cell-app-site" href="https://${a.website}" target="_blank" title="${a.website}">${a.website}</a>
-            </div>
-            <div class="cell-cat">${(a.category || '').replace(/^\d+\.\s*/, '')}</div>
-            <div class="cell-auth">${a.auth_method || '—'}</div>
-            <div>
-                <span class="access-tag ${ac}">${al}</span>
-            </div>
-            <div class="cell-auth" style="display:flex;flex-direction:column;gap:4px;">
-                <div>${(a.api_surface || '—').split(/[—–-]/)[0]}</div>
-                ${mcpBadge}
-            </div>
-            <div class="${whClass}" title="${a.webhooks}">${whText}</div>
-            <div>
-                <div class="cell-verdict" title="${a.buildability_verdict}">${a.buildability_verdict}</div>
-                <a class="ev-link" href="${a.evidence_url || '#'}" target="_blank" style="margin-top:4px;">View Docs ↗</a>
-            </div>
-        </div>
-        `;
+                <div class="matrix-row" data-cat="${a.category}" data-hitl="${a.hitl_needed}" data-access="${ac}">
+                    <div class="cell-num">${a.id}</div>
+                    <div>
+                        <div class="cell-app-name" title="${a.app_name}">${a.app_name}${hitlBadge}</div>
+                        <a class="cell-app-site" href="https://${a.website}" target="_blank" title="${a.website}">${a.website}</a>
+                    </div>
+                    <div class="cell-cat">${(a.category || '').replace(/^\d+\.\s*/, '')}</div>
+                    <div class="cell-auth" title="${safeAuth}">${safeAuth}</div>
+                    <div>
+                        <span class="access-tag ${ac}" title="${safeAccess}">${al}</span>
+                    </div>
+                    <div class="cell-auth" style="display:flex;flex-direction:column;gap:4px;">
+                        <div>${safeApi}</div>
+                        ${mcpBadge}
+                    </div>
+                    <div class="${whClass}" title="${whText}">${whText}</div>
+                    <div>
+                        <div class="cell-verdict" title="${safeVerdict}">${safeVerdict}</div>
+                        <a class="ev-link" href="${a.evidence_url || '#'}" target="_blank" style="margin-top:4px;">View Docs ↗</a>
+                    </div>
+                </div>
+                `;
             }).join('');
         }
 
