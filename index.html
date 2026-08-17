@@ -289,39 +289,57 @@
         }
 
         /* HITL section */
-        .hitl-grid {
+        .hitl-reason-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 14px;
+            margin-bottom: 32px;
         }
 
-        @media(max-width:700px) {
-            .hitl-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .hitl-box {
+        .hitl-reason-card {
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 24px;
+            padding: 18px 20px;
         }
 
-        .hitl-box h3 {
-            font-size: 0.9rem;
+        .hitl-reason-card .reason-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .reason-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .hitl-reason-card h4 {
+            font-size: 0.82rem;
             font-weight: 600;
-            margin-bottom: 16px;
-            color: var(--amber);
         }
 
-        .hitl-tag {
+        .hitl-reason-card .reason-desc {
+            font-size: 0.78rem;
+            color: var(--muted);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .hitl-app-tag {
             display: inline-block;
-            padding: 3px 10px;
+            padding: 2px 9px;
             border-radius: 99px;
             font-size: 11px;
             font-weight: 500;
-            margin: 3px;
+            margin: 2px;
             border: 1px solid;
         }
 
@@ -353,6 +371,16 @@
             background: rgba(129, 140, 248, 0.1);
             border-color: rgba(129, 140, 248, 0.3);
             color: var(--violet);
+        }
+
+        .hitl-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 99px;
+            font-size: 11px;
+            font-weight: 500;
+            margin: 3px;
+            border: 1px solid;
         }
 
         /* Steps */
@@ -457,76 +485,94 @@
             border: 1px solid rgba(251, 191, 36, 0.25);
         }
 
-        /* Main data table */
-        .table-wrapper {
-            overflow-x: auto;
+        /* ── Card-Row Data Matrix ── */
+        .matrix-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
             border: 1px solid var(--border);
             border-radius: 12px;
+            overflow: hidden;
         }
 
-        table.data {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 13px;
-        }
-
-        table.data thead th {
+        .matrix-header {
+            display: grid;
+            grid-template-columns: 36px 200px 130px 160px 100px 160px 80px 1fr;
+            gap: 0;
             background: rgba(255, 255, 255, 0.03);
-            padding: 12px 16px;
-            font-size: 11px;
+            border-bottom: 1px solid var(--border);
+            padding: 10px 16px;
+        }
+
+        .matrix-header span {
+            font-size: 10px;
             font-weight: 600;
-            letter-spacing: 0.06em;
+            letter-spacing: 0.07em;
             text-transform: uppercase;
             color: var(--muted);
-            text-align: left;
-            position: sticky;
-            top: 0;
-            border-bottom: 1px solid var(--border);
-            white-space: nowrap;
         }
 
-        table.data tbody tr {
+        .matrix-row {
+            display: grid;
+            grid-template-columns: 36px 200px 130px 160px 100px 160px 80px 1fr;
+            gap: 0;
+            padding: 11px 16px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-            transition: background 0.15s;
+            align-items: center;
+            transition: background 0.12s;
         }
 
-        table.data tbody tr:hover {
-            background: rgba(56, 189, 248, 0.03);
+        .matrix-row:last-child {
+            border-bottom: none;
         }
 
-        table.data td {
-            padding: 12px 16px;
-            vertical-align: top;
+        .matrix-row:hover {
+            background: rgba(56, 189, 248, 0.035);
         }
 
-        table.data td.num {
+        .matrix-row>div {
+            padding-right: 12px;
+        }
+
+        .cell-num {
+            font-size: 11px;
             color: var(--muted);
             font-variant-numeric: tabular-nums;
-            font-size: 12px;
-            width: 40px;
         }
 
-        .app-name {
+        .cell-app-name {
+            font-size: 13px;
             font-weight: 600;
             color: var(--text);
             white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        .app-site {
+        .cell-app-site {
             font-size: 11px;
-            margin-top: 2px;
+            color: var(--sky);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        .app-desc {
+        .cell-cat {
             font-size: 11px;
             color: var(--muted);
-            margin-top: 4px;
-            max-width: 220px;
             line-height: 1.4;
         }
 
-        td.narrow {
-            white-space: nowrap;
+        .cell-auth {
+            font-size: 11px;
+            color: var(--muted);
+            line-height: 1.35;
+        }
+
+        .cell-verdict {
+            font-size: 11px;
+            color: var(--muted);
+            line-height: 1.35;
         }
 
         .access-tag {
@@ -569,29 +615,34 @@
 
         .hitl-flag {
             display: inline-block;
-            padding: 2px 8px;
+            padding: 1px 7px;
             border-radius: 99px;
             font-size: 10px;
             font-weight: 600;
             background: rgba(251, 191, 36, 0.1);
             color: var(--amber);
             border: 1px solid rgba(251, 191, 36, 0.25);
-            margin-left: 4px;
+            margin-top: 3px;
         }
 
-        td.verdict {
-            font-size: 12px;
-            color: var(--muted);
-            max-width: 200px;
-            line-height: 1.4;
-        }
-
-        td.evidence {
+        .wh-yes {
+            color: var(--emerald);
             font-size: 11px;
-            max-width: 160px;
+        }
+
+        .wh-no {
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .ev-link {
+            font-size: 11px;
+            color: var(--sky);
+            white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            white-space: nowrap;
+            display: block;
+            max-width: 120px;
         }
 
         /* Search / Filter bar */
@@ -809,7 +860,8 @@
                                 <h4>Composio SDK Initialised</h4>
                                 <p>The agent uses <code>Composio(api_key=...)</code> to create a named user session via
                                     <code>sessions.create(user_id="research_agent")</code>. This provisions a Composio
-                                    tool context. The SDK exposes tools to the LLM automatically.</p>
+                                    tool context. The SDK exposes tools to the LLM automatically.
+                                </p>
                             </div>
                         </div>
                         <div class="step">
@@ -828,7 +880,8 @@
                                 <p>If Gemini's confidence is low, the output fails schema validation, or the app matches
                                     known gated patterns (enterprise-only, no public docs), the agent sets
                                     <code>hitl_needed: true</code> and writes an <code>agent_note</code> explaining why
-                                    human verification is needed.</p>
+                                    human verification is needed.
+                                </p>
                             </div>
                         </div>
                         <div class="step">
@@ -851,23 +904,18 @@
                     </div>
                 </div>
                 <div>
-                    <div class="hitl-box" style="margin-bottom:16px">
-                        <h3>⚠ Apps That Defeated the Agent (HITL Flagged)</h3>
-                        <p style="font-size:12px;color:var(--muted);margin-bottom:12px">These 24 apps required human
-                            intervention — either because they're enterprise-gated, behind waitlists, or have no public
-                            API at all. This is an honest finding, not a failure.</p>
-                        <div id="hitl-tags"></div>
+                    <div class="hitl-reason-grid" id="hitl-reasons-container">
+                        <!-- Filled by JS based on groupings -->
                     </div>
-                    <div class="hitl-box">
-                        <h3 style="color:var(--sky)">✓ Tool Stack Used</h3>
-                        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px">
+                    <div class="hitl-box" style="padding: 16px 20px;">
+                        <h3 style="color:var(--sky); font-size:0.85rem; margin-bottom:10px;">✓ Tool Stack Used</h3>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px;">
                             <span class="hitl-tag tag-sky">Composio SDK</span>
                             <span class="hitl-tag tag-sky">composio-gemini</span>
-                            <span class="hitl-tag tag-violet">Google Gemini API</span>
+                            <span class="hitl-tag tag-violet">Google Gemini 1.5 Flash</span>
                             <span class="hitl-tag tag-emerald">Pydantic v2</span>
                             <span class="hitl-tag tag-emerald">python-dotenv</span>
                             <span class="hitl-tag tag-amber">GitHub Pages</span>
-                            <span class="hitl-tag tag-amber">JSON + Vanilla JS</span>
                         </div>
                     </div>
                 </div>
@@ -1047,23 +1095,18 @@
                 <span class="row-count" id="rowCount"></span>
             </div>
 
-            <div class="table-wrapper">
-                <table class="data">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>App / Website</th>
-                            <th>Category</th>
-                            <th>Auth Method</th>
-                            <th>Access</th>
-                            <th>API Surface &amp; MCP</th>
-                            <th>Webhooks</th>
-                            <th>Buildability Verdict</th>
-                            <th>Evidence</th>
-                        </tr>
-                    </thead>
-                    <tbody id="dataBody"></tbody>
-                </table>
+            <div class="matrix-wrapper">
+                <div class="matrix-header">
+                    <span>#</span>
+                    <span>App / Website</span>
+                    <span>Category</span>
+                    <span>Auth Method</span>
+                    <span>Access</span>
+                    <span>API Surface & MCP</span>
+                    <span>Webhooks</span>
+                    <span>Buildability & Evidence</span>
+                </div>
+                <div id="dataBody"></div>
             </div>
         </div>
     </section>
@@ -1077,90 +1120,153 @@
     </footer>
 
     <script>
-        let allData = [];
+let allData = [];
 
-        async function loadData() {
-            try {
-                const r = await fetch('agent_results.json');
-                allData = await r.json();
-                renderTable(allData);
-                renderHitlTags();
-            } catch (e) {
-                document.getElementById('dataBody').innerHTML = '<tr><td colspan="9" style="padding:24px;color:#71717a;text-align:center">Error loading data. Ensure agent_results.json is in the same directory.</td></tr>';
-            }
-        }
+async function loadData() {
+    try {
+        const r = await fetch('agent_results.json');
+        allData = await r.json();
+        renderTable(allData);
+        renderHitlTags();
+    } catch (e) {
+        document.getElementById('dataBody').innerHTML = '<div style="padding:40px;text-align:center;color:var(--muted)">Error loading data. Ensure agent_results.json is in the same directory.</div>';
+    }
+}
 
-        function renderHitlTags() {
-            const hitlApps = allData.filter(a => a.hitl_needed);
-            const container = document.getElementById('hitl-tags');
-            container.innerHTML = hitlApps.map(a =>
-                `<span class="hitl-tag tag-rose">${a.app_name}</span>`
-            ).join('');
-        }
+function renderHitlTags() {
+    const hitlApps = allData.filter(a => a.hitl_needed);
 
-        function accessClass(a) {
-            if (a.hitl_needed) return 'gated';
-            const t = (a.access_type || '').toLowerCase();
-            if (t.includes('self')) return 'self-serve';
-            if (t.includes('gated') || t.includes('enterprise') || t.includes('partner')) return 'gated';
-            return 'mixed';
-        }
-        function accessLabel(a) {
-            if (a.hitl_needed) return 'Gated / HITL';
-            const t = (a.access_type || '');
-            if (t.toLowerCase().includes('self')) return 'Self-serve';
-            return t.split('(')[0].trim().split('—')[0].trim() || 'Gated';
-        }
+    const groups = {
+        "Enterprise/Partner Gated": [],
+        "No Public API / Waitlist": [],
+        "Agent Verification Error": []
+    };
 
-        function renderTable(data) {
-            const tbody = document.getElementById('dataBody');
-            document.getElementById('rowCount').textContent = `Showing ${data.length} of ${allData.length} apps`;
-            if (!data.length) {
-                tbody.innerHTML = '<tr><td colspan="9" style="padding:24px;color:#71717a;text-align:center">No apps match your filters.</td></tr>';
-                return;
-            }
-            tbody.innerHTML = data.map(a => {
-                const ac = accessClass(a);
-                const al = accessLabel(a);
-                const mcpBadge = (a.mcp_available && a.mcp_available !== 'No')
-                    ? `<div class="mcp-yes" style="margin-top:4px;display:inline-block">${a.mcp_available.startsWith('Yes') ? '⚡ ' : ''}MCP</div>` : '';
-                const hitlBadge = a.hitl_needed ? '<span class="hitl-flag">HITL</span>' : '';
-                return `<tr data-cat="${a.category}" data-hitl="${a.hitl_needed}" data-access="${ac}">
-      <td class="num">${a.id}</td>
-      <td>
-        <div class="app-name">${a.app_name}${hitlBadge}</div>
-        <div class="app-site"><a href="https://${a.website}" target="_blank">${a.website}</a></div>
-        <div class="app-desc">${a.description || ''}</div>
-      </td>
-      <td class="narrow" style="font-size:11px;color:var(--muted)">${(a.category || '').replace(/^\d+\.\s*/, '')}</td>
-      <td style="font-size:12px;color:var(--muted);white-space:normal;min-width:140px">${a.auth_method || '—'}</td>
-      <td class="narrow"><span class="access-tag ${ac}">${al}</span><div style="font-size:10px;color:var(--muted);margin-top:4px;max-width:120px;white-space:normal">${(a.self_serve_detail || '').substring(0, 80)}${(a.self_serve_detail || '').length > 80 ? '…' : ''}</div></td>
-      <td style="font-size:12px;color:var(--muted);white-space:normal;min-width:160px">${a.api_surface || '—'}${mcpBadge}</td>
-      <td style="font-size:12px;color:var(--muted);white-space:nowrap">${a.webhooks || '—'}</td>
-      <td class="verdict">${a.buildability_verdict || '—'}</td>
-      <td class="evidence"><a href="${a.evidence_url || '#'}" target="_blank">${(a.evidence_url || '').replace('https://', '').substring(0, 28)}…</a></td>
-    </tr>`;
-            }).join('');
+    hitlApps.forEach(a => {
+        const note = (a.agent_note || "").toLowerCase();
+        if (note.includes("no public") || note.includes("waitlist") || a.category.includes("10.")) {
+            groups["No Public API / Waitlist"].push(a.app_name);
+        } else if (note.includes("gated") || note.includes("partner") || note.includes("sales") || a.category.includes("9.")) {
+            groups["Enterprise/Partner Gated"].push(a.app_name);
+        } else {
+            groups["Agent Verification Error"].push(a.app_name);
         }
+    });
 
-        function filterTable() {
-            const q = document.getElementById('searchInput').value.toLowerCase();
-            const cat = document.getElementById('categoryFilter').value;
-            const acc = document.getElementById('accessFilter').value;
-            const filtered = allData.filter(a => {
-                const matchQ = !q || a.app_name.toLowerCase().includes(q) || (a.description || '').toLowerCase().includes(q);
-                const matchCat = !cat || a.category === cat;
-                const matchAcc = !acc
-                    || (acc === 'self' && accessClass(a) === 'self-serve')
-                    || (acc === 'gated' && accessClass(a) === 'gated')
-                    || (acc === 'hitl' && a.hitl_needed);
-                return matchQ && matchCat && matchAcc;
-            });
-            renderTable(filtered);
-        }
+    const container = document.getElementById('hitl-reasons-container');
+    container.innerHTML = `
+        <div class="hitl-reason-card" style="grid-column: 1 / -1; border-color: rgba(251,191,36,0.3); background: rgba(251,191,36,0.02)">
+            <div class="reason-header">
+                <div class="reason-icon" style="background: rgba(251,191,36,0.1); color: var(--amber);">⚠</div>
+                <h4 style="color: var(--amber); font-size: 0.95rem;">Apps That Defeated the Agent</h4>
+            </div>
+            <p class="reason-desc" style="font-size: 0.85rem; margin-bottom: 0;">These ${hitlApps.length} apps required human intervention because they are intrinsically impossible to self-serve, lack public docs, or threw agent parsing errors. This is an honest finding.</p>
+        </div>
+        <div class="hitl-reason-card">
+            <div class="reason-header">
+                <div class="reason-icon" style="background: rgba(251,113,133,0.1); color: var(--rose);">🏢</div>
+                <h4>Enterprise / Partner Gated</h4>
+            </div>
+            <p class="reason-desc">Strictly requires contacting sales, compliance review, or partner status.</p>
+            <div>${groups["Enterprise/Partner Gated"].map(n => `<span class="hitl-app-tag tag-rose">${n}</span>`).join('')}</div>
+        </div>
+        <div class="hitl-reason-card">
+            <div class="reason-header">
+                <div class="reason-icon" style="background: rgba(129,140,248,0.1); color: var(--violet);">🔒</div>
+                <h4>No Public API / Waitlist</h4>
+            </div>
+            <p class="reason-desc">Product has no developer API currently, or is strictly in a closed beta.</p>
+            <div>${groups["No Public API / Waitlist"].map(n => `<span class="hitl-app-tag tag-violet">${n}</span>`).join('')}</div>
+        </div>
+    `;
+}
 
-        document.addEventListener('DOMContentLoaded', loadData);
-    </script>
+function accessClass(a) {
+    if (a.hitl_needed) return 'gated';
+    const t = (a.access_type || '').toLowerCase();
+    if (t.includes('self')) return 'self-serve';
+    if (t.includes('gated') || t.includes('enterprise') || t.includes('partner')) return 'gated';
+    return 'mixed';
+}
+
+function accessLabel(a) {
+    if (a.hitl_needed) return 'Gated / HITL';
+    const t = (a.access_type || '');
+    if (t.toLowerCase().includes('self')) return 'Self-serve';
+    return t.split('(')[0].trim().split('—')[0].trim().replace(/[^a-zA-Z0-9 -]/g, '') || 'Gated';
+}
+
+function renderTable(data) {
+    const tbody = document.getElementById('dataBody');
+    const rc = document.getElementById('rowCount');
+    if (rc) {
+        rc.textContent = `Showing ${data.length} of ${allData.length} apps`;
+    }
+    
+    if (!data.length) {
+        tbody.innerHTML = '<div style="padding:40px;text-align:center;color:var(--muted)">No apps match your filters.</div>';
+        return;
+    }
+    
+    tbody.innerHTML = data.map(a => {
+        const ac = accessClass(a);
+        const al = accessLabel(a);
+        const mcpBadge = (a.mcp_available && a.mcp_available !== 'No')
+            ? `<div class="mcp-yes" style="margin-top:4px;display:flex;align-items:center;gap:4px;width:fit-content">${a.mcp_available.startsWith('Yes') ? '⚡ ' : ''}MCP</div>` : '';
+        const hitlBadge = a.hitl_needed ? '<span class="hitl-flag">HITL</span>' : '';
+        
+        const whRaw = (a.webhooks || '').toLowerCase();
+        const whHas = whRaw.includes('yes') || whRaw.includes('support') || whRaw.includes('comprehens');
+        const whText = whRaw.includes('no') && !whRaw.includes('yes') ? 'No webhooks' : a.webhooks.split(/[—–-]/)[0];
+        const whClass = whHas ? 'wh-yes' : 'wh-no';
+
+        let verdict = (a.buildability_verdict || '—').replace(/[^a-zA-Z0-9 .,!?()'-]/g, '');
+
+        return `
+        <div class="matrix-row" data-cat="${a.category}" data-hitl="${a.hitl_needed}" data-access="${ac}">
+            <div class="cell-num">${a.id}</div>
+            <div>
+                <div class="cell-app-name" title="${a.app_name}">${a.app_name}${hitlBadge}</div>
+                <a class="cell-app-site" href="https://${a.website}" target="_blank" title="${a.website}">${a.website}</a>
+            </div>
+            <div class="cell-cat">${(a.category || '').replace(/^\d+\.\s*/, '')}</div>
+            <div class="cell-auth">${a.auth_method || '—'}</div>
+            <div>
+                <span class="access-tag ${ac}">${al}</span>
+            </div>
+            <div class="cell-auth" style="display:flex;flex-direction:column;gap:4px;">
+                <div>${(a.api_surface || '—').split(/[—–-]/)[0]}</div>
+                ${mcpBadge}
+            </div>
+            <div class="${whClass}" title="${a.webhooks}">${whText}</div>
+            <div>
+                <div class="cell-verdict" title="${a.buildability_verdict}">${verdict}</div>
+                <a class="ev-link" href="${a.evidence_url || '#'}" target="_blank" style="margin-top:4px;">View Docs ↗</a>
+            </div>
+        </div>
+        `;
+    }).join('');
+}
+
+function filterTable() {
+    const q = document.getElementById('searchInput').value.toLowerCase();
+    const cat = document.getElementById('categoryFilter').value;
+    const acc = document.getElementById('accessFilter').value;
+    
+    const filtered = allData.filter(a => {
+        const matchQ = !q || a.app_name.toLowerCase().includes(q) || (a.description||'').toLowerCase().includes(q);
+        const matchCat = !cat || a.category === cat;
+        const matchAcc = !acc
+            || (acc === 'self' && accessClass(a) === 'self-serve')
+            || (acc === 'gated' && accessClass(a) === 'gated')
+            || (acc === 'hitl' && a.hitl_needed);
+        return matchQ && matchCat && matchAcc;
+    });
+    
+    renderTable(filtered);
+}
+
+document.addEventListener('DOMContentLoaded', loadData);
+</script>
 </body>
-
 </html>
