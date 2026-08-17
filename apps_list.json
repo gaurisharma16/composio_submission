@@ -1,0 +1,347 @@
+[
+  {
+    "id": 10,
+    "name": "categories and every common auth pattern on purpose, so the interesting",
+    "hint_url": "part"
+  },
+  {
+    "id": 2,
+    "name": "HubSpot",
+    "hint_url": "hubspot.com"
+  },
+  {
+    "id": 3,
+    "name": "Pipedrive",
+    "hint_url": "pipedrive.com"
+  },
+  {
+    "id": 4,
+    "name": "Attio",
+    "hint_url": "attio.com"
+  },
+  {
+    "id": 6,
+    "name": "Podio",
+    "hint_url": "podio.com"
+  },
+  {
+    "id": 7,
+    "name": "Zoho",
+    "hint_url": "CRMzoho.com/crm"
+  },
+  {
+    "id": 8,
+    "name": "Close",
+    "hint_url": "close.com"
+  },
+  {
+    "id": 9,
+    "name": "Copper",
+    "hint_url": "copper.com"
+  },
+  {
+    "id": 11,
+    "name": "Zendesk",
+    "hint_url": "zendesk.com"
+  },
+  {
+    "id": 12,
+    "name": "Intercom",
+    "hint_url": "intercom.com"
+  },
+  {
+    "id": 14,
+    "name": "Front",
+    "hint_url": "front.com"
+  },
+  {
+    "id": 15,
+    "name": "Pylon",
+    "hint_url": "usepylon.com"
+  },
+  {
+    "id": 17,
+    "name": "Plain",
+    "hint_url": "plain.com"
+  },
+  {
+    "id": 18,
+    "name": "Help",
+    "hint_url": "Scouthelpscout.com"
+  },
+  {
+    "id": 19,
+    "name": "Gorgias",
+    "hint_url": "gorgias.com"
+  },
+  {
+    "id": 20,
+    "name": "Gladly",
+    "hint_url": "gladly.com"
+  },
+  {
+    "id": 21,
+    "name": "Slack",
+    "hint_url": "slack.com"
+  },
+  {
+    "id": 22,
+    "name": "Twilio",
+    "hint_url": "twilio.com"
+  },
+  {
+    "id": 23,
+    "name": "Zoho Cliq",
+    "hint_url": "zoho.com/cliq"
+  },
+  {
+    "id": 25,
+    "name": "Pumble",
+    "hint_url": "pumble.com"
+  },
+  {
+    "id": 26,
+    "name": "Discord",
+    "hint_url": "discord.com"
+  },
+  {
+    "id": 27,
+    "name": "Telegram",
+    "hint_url": "core.telegram.org"
+  },
+  {
+    "id": 28,
+    "name": "WhatsApp",
+    "hint_url": "Businessdevelopers.facebook.com/docs/whatsapp"
+  },
+  {
+    "id": 29,
+    "name": "Aircall",
+    "hint_url": "aircall.io"
+  },
+  {
+    "id": 30,
+    "name": "Vonage",
+    "hint_url": "developer.vonage.com"
+  },
+  {
+    "id": 31,
+    "name": "Google",
+    "hint_url": "Adsdevelopers.google.com/google-ads"
+  },
+  {
+    "id": 32,
+    "name": "Meta",
+    "hint_url": "Adsdevelopers.facebook.com/docs/marketing-apis"
+  },
+  {
+    "id": 33,
+    "name": "LinkedIn",
+    "hint_url": "Adslearn.microsoft.com/linkedin/marketing"
+  },
+  {
+    "id": 36,
+    "name": "Klaviyo",
+    "hint_url": "developers.klaviyo.com"
+  },
+  {
+    "id": 38,
+    "name": "Pinterest",
+    "hint_url": "developers.pinterest.com"
+  },
+  {
+    "id": 40,
+    "name": "SendGrid",
+    "hint_url": "sendgrid.com"
+  },
+  {
+    "id": 41,
+    "name": "Shopify",
+    "hint_url": "shopify.dev"
+  },
+  {
+    "id": 43,
+    "name": "BigCommerce",
+    "hint_url": "developer.bigcommerce.com"
+  },
+  {
+    "id": 46,
+    "name": "Squarespace",
+    "hint_url": "developers.squarespace.com"
+  },
+  {
+    "id": 47,
+    "name": "Ecwid",
+    "hint_url": "api-docs.ecwid.com"
+  },
+  {
+    "id": 48,
+    "name": "Gumroad",
+    "hint_url": "gumroad.com/api"
+  },
+  {
+    "id": 50,
+    "name": "fanbasis",
+    "hint_url": "fanbasis.com"
+  },
+  {
+    "id": 52,
+    "name": "SE",
+    "hint_url": "Rankingseranking.com/api"
+  },
+  {
+    "id": 53,
+    "name": "Ahrefs",
+    "hint_url": "ahrefs.com/api"
+  },
+  {
+    "id": 55,
+    "name": "Apify",
+    "hint_url": "docs.apify.com"
+  },
+  {
+    "id": 57,
+    "name": "Bright",
+    "hint_url": "Databrightdata.com"
+  },
+  {
+    "id": 58,
+    "name": "Sherlock",
+    "hint_url": "github.com/sherlock-project/sherlock"
+  },
+  {
+    "id": 60,
+    "name": "Clay",
+    "hint_url": "clay.com"
+  },
+  {
+    "id": 61,
+    "name": "GitHub",
+    "hint_url": "docs.github.com/rest"
+  },
+  {
+    "id": 62,
+    "name": "Vercel",
+    "hint_url": "vercel.com/docs/rest-api"
+  },
+  {
+    "id": 63,
+    "name": "Netlify",
+    "hint_url": "docs.netlify.com/api"
+  },
+  {
+    "id": 66,
+    "name": "Neo4j",
+    "hint_url": "neo4j.com/docs/api"
+  },
+  {
+    "id": 68,
+    "name": "MongoDB",
+    "hint_url": "Atlasmongodb.com/docs/atlas/api"
+  },
+  {
+    "id": 69,
+    "name": "Datadog",
+    "hint_url": "docs.datadoghq.com/api"
+  },
+  {
+    "id": 70,
+    "name": "Sentry",
+    "hint_url": "docs.sentry.io/api"
+  },
+  {
+    "id": 71,
+    "name": "Notion",
+    "hint_url": "developers.notion.com"
+  },
+  {
+    "id": 72,
+    "name": "Airtable",
+    "hint_url": "airtable.com/developers"
+  },
+  {
+    "id": 73,
+    "name": "Linear",
+    "hint_url": "developers.linear.app"
+  },
+  {
+    "id": 74,
+    "name": "Jira",
+    "hint_url": "developer.atlassian.com"
+  },
+  {
+    "id": 75,
+    "name": "Asana",
+    "hint_url": "developers.asana.com"
+  },
+  {
+    "id": 77,
+    "name": "ClickUp",
+    "hint_url": "clickup.com/api"
+  },
+  {
+    "id": 78,
+    "name": "Coda",
+    "hint_url": "coda.io/developers"
+  },
+  {
+    "id": 81,
+    "name": "Stripe",
+    "hint_url": "stripe.com/docs/api"
+  },
+  {
+    "id": 82,
+    "name": "Plaid",
+    "hint_url": "plaid.com/docs"
+  },
+  {
+    "id": 83,
+    "name": "Binance",
+    "hint_url": "binance-docs.github.io"
+  },
+  {
+    "id": 85,
+    "name": "iPayX",
+    "hint_url": "ipayx.ai/docs"
+  },
+  {
+    "id": 87,
+    "name": "Xero",
+    "hint_url": "developer.xero.com"
+  },
+  {
+    "id": 88,
+    "name": "Brex",
+    "hint_url": "developer.brex.com"
+  },
+  {
+    "id": 89,
+    "name": "Ramp",
+    "hint_url": "docs.ramp.com"
+  },
+  {
+    "id": 91,
+    "name": "NotebookLM",
+    "hint_url": "cloud.google.com/gemini \u0000Enterprise API\u0000"
+  },
+  {
+    "id": 93,
+    "name": "Fathom",
+    "hint_url": "fathom.video"
+  },
+  {
+    "id": 97,
+    "name": "higgsfield",
+    "hint_url": "higgsfield.ai/cli (content suite)"
+  },
+  {
+    "id": 98,
+    "name": "Mermaid",
+    "hint_url": "CLIgithub.com/mermaid-js/mermaid-cli"
+  },
+  {
+    "id": 99,
+    "name": "YouTube",
+    "hint_url": "Transcripttranscriptapi.com"
+  }
+]
